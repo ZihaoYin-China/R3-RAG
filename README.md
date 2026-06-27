@@ -23,8 +23,6 @@ R3-RAG is a closed-loop multimodal retrieval-augmented generation framework for 
 
 The framework reaches **91.51% accuracy on ScienceQA** and **48.21% accuracy on the official Science subset of the MMMU test set**.
 
-![R3-RAG framework](paper/figures/Figure_1.png)
-
 ## Repository Structure
 
 ```text
@@ -32,7 +30,6 @@ agents/                 Agent orchestration and answer synthesis
 configs/                Retrieval and decomposition configuration
 dataset/                Dataset download helper
 models/                 Base model abstractions
-paper/                  Accepted manuscript, LaTeX source, and figures
 prompts/                Prompt templates
 retrieval/              Multimodal, graph, vector, web, reranking, and reflection modules
 scripts/                Knowledge-base construction, baselines, and result analysis
