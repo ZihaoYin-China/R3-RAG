@@ -108,9 +108,7 @@ Web retrieval can be configured through the command-line options or environment 
 
 ## Paper
 
-- [Accepted manuscript](paper/R3-RAG_Manuscript.pdf)
-- [LaTeX source](paper/R3-RAG_Manuscript.tex)
-- [Paper figures](paper/figures)
+- [R3-RAG: Reweight, Rerank, and Reflect for Evidence-Calibrated Scientific Multimodal Reasoning](https://www.sciencedirect.com/science/article/pii/S0957417426020154)
 
 ## Citation
 
