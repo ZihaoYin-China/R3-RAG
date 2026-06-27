@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Logs and local process state
+*.log
+*.pid
+
+# Downloaded datasets and generated knowledge bases
+ScienceQA/
+data/
+*_workdir*/
+
+# Generated indexes and model artifacts
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Experiment outputs (curated results are retained)
+outputs/
+output/
+results/*.json
+results_ablation/*.json
+results_32b_comparison/*.json
+
+# Scratch files
+scripts/新建 文本文档.txt

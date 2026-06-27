@@ -1,0 +1,12 @@
+llm_model_name: "qwen2.5:7b"
+temperature: 0.0
+max_tokens: 512
+max_intents: 3
+
+
+intent_count_prompt: |
+  Please calculate how many independent intents are contained in the following query. 
+  Return only an integer:\n{query}\nNumber of intents: 
+
+intent_split_prompt: |
+  Split the following query into multiple independent sub-queries, separated by '||', without additional explanations:\n{query}\nList of sub-queries: 
