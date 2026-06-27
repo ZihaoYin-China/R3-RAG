@@ -35,9 +35,9 @@ except Exception:
 class DecomposeAgent:
     def __init__(self, config):
         self.config = config
-        # Use Ollama to connect to the locally deployed Qwen2.5-7B model
+        # The release does not prescribe a model; callers must configure one.
         self.llm = Ollama(
-            model="qwen2.5:32b",  # Ensure the model name in Ollama is correct
+            model=config.llm_model_name,
             temperature=0.35
         )
         self.tools = [

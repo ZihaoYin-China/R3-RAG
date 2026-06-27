@@ -49,14 +49,16 @@ def parse_args():
         help='LightRAG KB workdir (contains rag_storage, vdb_*.json, graph_*.graphml, etc.)'
     )
 
-    parser.add_argument('--llm_model_name', type=str, default='qwen2.5:32b')
+    parser.add_argument('--llm_model_name', type=str, required=True,
+                        help='Language model served by the configured backend.')
     parser.add_argument('--mode', type=str, default='hybrid')
     parser.add_argument('--serper_api_key', type=str, default=None)
     parser.add_argument('--top_k', type=int, default=4)
 
     # ✅ 新增：重排序参数注册
     parser.add_argument('--rerank_top_k', type=int, default=5, help='Number of documents to keep after reranking')
-    parser.add_argument('--rerank_model_name', type=str, default='BAAI/bge-reranker-v2-m3', help='HuggingFace model name for reranker')
+    parser.add_argument('--rerank_model_name', type=str, required=True,
+                        help='Hugging Face model name or path for the reranker.')
 
     # ---- Ollama host + Summary VLM (final step truly sees images) ----
     parser.add_argument('--ollama_host', type=str, default='http://localhost:11434',
@@ -71,8 +73,10 @@ def parse_args():
     # ---- Multimodal embedding settings (OpenCLIP for retrieval) ----
     parser.add_argument('--device', type=str, default='',
                         help="cuda/cpu. Empty=auto.")
-    parser.add_argument('--clip_model', type=str, default='ViT-B-32')
-    parser.add_argument('--clip_pretrained', type=str, default='laion2b_s34b_b79k')
+    parser.add_argument('--clip_model', type=str, required=True,
+                        help='OpenCLIP architecture name.')
+    parser.add_argument('--clip_pretrained', type=str, required=True,
+                        help='OpenCLIP pretrained checkpoint tag or path.')
     parser.add_argument('--clip_batch_size', type=int, default=32)
 
     # ---- LightRAG stability knobs ----
@@ -80,7 +84,7 @@ def parse_args():
                         help='Max concurrent LLM calls inside LightRAG (smaller is safer).')
     parser.add_argument('--lightrag_num_ctx', type=int, default=8192,
                         help='Ollama num_ctx for LightRAG internal llm (smaller is safer).')
-    parser.add_argument('--lightrag_embed_model', type=str, default='nomic-embed-text',
+    parser.add_argument('--lightrag_embed_model', type=str, required=True,
                         help='Embedding model name served by Ollama for LightRAG.')
 
     # GPT settings

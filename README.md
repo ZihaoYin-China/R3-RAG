@@ -97,8 +97,11 @@ python main.py \
   --image_root /path/to/scienceqa/images \
   --working_dir /path/to/lightrag/workdir \
   --output_root ./outputs \
-  --llm_model_name qwen2.5:32b \
-  --rerank_model_name BAAI/bge-reranker-v2-m3
+  --llm_model_name <ollama-model> \
+  --rerank_model_name <reranker-model> \
+  --clip_model <openclip-architecture> \
+  --clip_pretrained <openclip-checkpoint> \
+  --lightrag_embed_model <embedding-model>
 ```
 
 Web retrieval can be configured through the command-line options or environment variables supported by the retrieval module. Never commit API keys to the repository.

@@ -367,10 +367,10 @@ def parse_args():
     ap.add_argument("--clear", action="store_true")
 
     ap.add_argument("--ollama_host", default="http://localhost:11434")
-    ap.add_argument("--llm_model_name", default="qwen2.5:32b")
+    ap.add_argument("--llm_model_name", required=True)
     ap.add_argument("--num_ctx", type=int, default=8192)
 
-    ap.add_argument("--embed_model", default="nomic-embed-text")
+    ap.add_argument("--embed_model", required=True)
     ap.add_argument("--embedding_dim", type=int, default=768)
     ap.add_argument("--max_embed_tokens", type=int, default=8192)
 
